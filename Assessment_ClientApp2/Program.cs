@@ -120,7 +120,8 @@ namespace Assessment_ClientApp2
                 Console.WriteLine("\tc) Add Monster");
                 Console.WriteLine("\td) Delete Monster");
                 Console.WriteLine("\te) Update Monster");
-                Console.WriteLine("\tf) Read from Monster File");
+                Console.WriteLine("\tf) Read from Data File");
+                Console.WriteLine("\tg) Write to Data File");
                 Console.WriteLine("\tq) Quit");
                 Console.Write("\t\tEnter Choice:");
                 menuChoice = Console.ReadLine().ToLower();
@@ -152,6 +153,10 @@ namespace Assessment_ClientApp2
 
                     case "f":
                         ReadFromDataFile();
+                        break;
+
+                    case "g":
+                        DisplayWriteToDataFile(monsters);
                         break;
                         
                     case "q":
