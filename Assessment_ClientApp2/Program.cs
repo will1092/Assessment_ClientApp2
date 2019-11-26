@@ -8,9 +8,9 @@ namespace Assessment_ClientApp2
     // **************************************************
     //
     // Assessment: Client App 2.0
-    // Author: 
-    // Dated: 
-    // Level (Novice, Apprentice, or Master): 
+    // Author: Cody Williams
+    // Dated: 11/26/2019
+    // Level (Novice, Apprentice, or Master): Master
     //
     // **************************************************    
 
@@ -74,6 +74,20 @@ namespace Assessment_ClientApp2
                     Name = "Bill",
                     Age = 934,
                     Attitude = Monster.EmotionalState.sad
+                },
+
+                new Monster()
+                {
+                    Name = "Tim",
+                    Age = 24,
+                    Attitude = Monster.EmotionalState.angry
+                },
+
+                new Monster()
+                {
+                    Name = "Alex",
+                    Age = 502,
+                    Attitude = Monster.EmotionalState.bored
                 }
 
             };
@@ -535,6 +549,8 @@ namespace Assessment_ClientApp2
             Console.WriteLine($"\tName: {monster.Name}");
             Console.WriteLine($"\tAge: {monster.Age}");
             Console.WriteLine($"\tAttitude: {monster.Attitude}");
+            Console.WriteLine($"\t{newProperty1}: {monster.NewProperty1}");  // to-do change newProperty1 to the actual property name
+            Console.WriteLine($"\t{newProperty2}: {monster.NewProperty2}");  // to-do change newProperty2 to the actual property name
             Console.WriteLine("\t" + monster.Greeting());
         }
 
