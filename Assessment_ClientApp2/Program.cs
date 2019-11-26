@@ -120,6 +120,7 @@ namespace Assessment_ClientApp2
                 Console.WriteLine("\tc) Add Monster");
                 Console.WriteLine("\td) Delete Monster");
                 Console.WriteLine("\te) Update Monster");
+                Console.WriteLine("\tf) Read from Monster File");
                 Console.WriteLine("\tq) Quit");
                 Console.Write("\t\tEnter Choice:");
                 menuChoice = Console.ReadLine().ToLower();
@@ -147,6 +148,10 @@ namespace Assessment_ClientApp2
 
                     case "e":
                         DisplayUpdateMonster(monsters);
+                        break;
+
+                    case "f":
+                        ReadFromDataFile();
                         break;
                         
                     case "q":
@@ -255,7 +260,12 @@ namespace Assessment_ClientApp2
             newMonster.Attitude = attitude;
 
             Console.Write("\tTribe: ");
-            newMonster.Tribe = Console.ReadLine();
+            Enum.TryParse(Console.ReadLine(), out Monster.Society tribe);
+            newMonster.Tribe = tribe;
+
+            Console.Write("\tActive State: ");
+            bool.TryParse(Console.ReadLine(), out bool active);
+            newMonster.Active = active;
 
             //
             // echo new monster properties
@@ -423,7 +433,16 @@ namespace Assessment_ClientApp2
             userResponse = Console.ReadLine();
             if (userResponse != "")
             {
-                selectedMonster.Tribe = userResponse;
+                Enum.TryParse(userResponse, out Monster.Society tribe);
+                selectedMonster.Tribe = tribe;
+            }
+
+            Console.Write($"Current Active State: {selectedMonster.Active} New Active State: ");
+            userResponse = Console.ReadLine();
+            if (userResponse != "")
+            {
+                bool.TryParse(userResponse, out bool active);
+                selectedMonster.Active = active;
             }
 
             //
@@ -492,7 +511,9 @@ namespace Assessment_ClientApp2
                 string monsterString =
                     monsters[index].Name + "," +
                     monsters[index].Age + "," +
-                    monsters[index].Attitude;
+                    monsters[index].Attitude + "," +
+                    monsters[index].Tribe + "," +
+                    monsters[index].Active;
 
                 monstersString[index] = monsterString;
             }
@@ -539,6 +560,11 @@ namespace Assessment_ClientApp2
                 Enum.TryParse(monsterProperties[2], out Monster.EmotionalState attitude);
                 newMonster.Attitude = attitude;
 
+                Enum.TryParse(monsterProperties[3], out Monster.Society tribe);
+                newMonster.Tribe = tribe;
+
+                bool.TryParse(monsterProperties[4], out bool active);
+
                 //
                 // add new monster to list
                 //
@@ -561,8 +587,8 @@ namespace Assessment_ClientApp2
             Console.WriteLine($"\tName: {monster.Name}");
             Console.WriteLine($"\tAge: {monster.Age}");
             Console.WriteLine($"\tAttitude: {monster.Attitude}");
-            Console.WriteLine($"\t{newProperty1}: {monster.NewProperty1}");  // to-do change newProperty1 to the actual property name
-            Console.WriteLine($"\t{newProperty2}: {monster.NewProperty2}");  // to-do change newProperty2 to the actual property name
+            Console.WriteLine($"\tTribe: {monster.Tribe}");
+            Console.WriteLine($"\tActive State: {monster.Active}");
             Console.WriteLine("\t" + monster.Greeting());
         }
 

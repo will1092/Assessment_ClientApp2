@@ -20,12 +20,22 @@ namespace Assessment_ClientApp2
             bored
         }
 
+        public enum Society
+        {
+            none,
+            north,
+            south,
+            east,
+            west
+        }
+
         #region FIELDS
 
         private string _name;
         private int _age;
         private EmotionalState _attitude;
-        private string _tribe;
+        private Society _tribe;
+        private bool _active;
 
         #endregion
 
@@ -49,10 +59,16 @@ namespace Assessment_ClientApp2
             set { _attitude = value; }
         }
 
-        public string Tribe
+        public Society Tribe
         {
             get { return _tribe; }
             set { _tribe = value; }
+        }
+
+        public bool Active
+        {
+            get { return _active; }
+            set { _active = value; }
         }
 
         #endregion
