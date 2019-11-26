@@ -419,6 +419,13 @@ namespace Assessment_ClientApp2
                 selectedMonster.Attitude = attitude;
             }
 
+            Console.Write($"\tCurrent Tribe: {selectedMonster.Tribe} New Tribe: ");
+            userResponse = Console.ReadLine();
+            if (userResponse != "")
+            {
+                selectedMonster.Tribe = userResponse;
+            }
+
             //
             // echo updated monster properties
             //
