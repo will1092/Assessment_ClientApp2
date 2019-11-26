@@ -25,12 +25,12 @@ namespace Assessment_ClientApp2
             //
             // initialize monster list from method
             //
-            List<Monster> monsters = InitializeMonsterList();
+            //List<Monster> monsters = InitializeMonsterList();
 
             //
             // read monsters from data file
             //
-            //List<Monster> monsters = ReadFromDataFile();
+            List<Monster> monsters = ReadFromDataFile();
 
             //
             // application flow
