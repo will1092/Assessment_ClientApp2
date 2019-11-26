@@ -245,12 +245,17 @@ namespace Assessment_ClientApp2
             //
             Console.Write("\tName: ");
             newMonster.Name = Console.ReadLine();
+
             Console.Write("\tAge: ");
             int.TryParse(Console.ReadLine(), out int age);
             newMonster.Age = age;
+
             Console.Write("\tAttitude: ");
             Enum.TryParse(Console.ReadLine(), out Monster.EmotionalState attitude);
             newMonster.Attitude = attitude;
+
+            Console.Write("\tTribe: ");
+            newMonster.Tribe = Console.ReadLine();
 
             //
             // echo new monster properties
