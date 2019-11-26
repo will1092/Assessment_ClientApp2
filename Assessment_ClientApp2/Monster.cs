@@ -25,6 +25,7 @@ namespace Assessment_ClientApp2
         private string _name;
         private int _age;
         private EmotionalState _attitude;
+        private string _tribe;
 
         #endregion
 
@@ -46,6 +47,12 @@ namespace Assessment_ClientApp2
         {
             get { return _attitude; }
             set { _attitude = value; }
+        }
+
+        public string Tribe
+        {
+            get { return _tribe; }
+            set { _tribe = value; }
         }
 
         #endregion
