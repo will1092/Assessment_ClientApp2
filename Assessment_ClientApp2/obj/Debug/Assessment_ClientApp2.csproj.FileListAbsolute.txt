@@ -1,0 +1,7 @@
+C:\Users\Cody\Downloads\Assessment_ClientApp2-master\Assessment_ClientApp2\bin\Debug\Data\Data.txt
+C:\Users\Cody\Downloads\Assessment_ClientApp2-master\Assessment_ClientApp2\bin\Debug\Monsters.exe.config
+C:\Users\Cody\Downloads\Assessment_ClientApp2-master\Assessment_ClientApp2\bin\Debug\Monsters.exe
+C:\Users\Cody\Downloads\Assessment_ClientApp2-master\Assessment_ClientApp2\bin\Debug\Monsters.pdb
+C:\Users\Cody\Downloads\Assessment_ClientApp2-master\Assessment_ClientApp2\obj\Debug\Assessment_ClientApp2.csprojAssemblyReference.cache
+C:\Users\Cody\Downloads\Assessment_ClientApp2-master\Assessment_ClientApp2\obj\Debug\Monsters.exe
+C:\Users\Cody\Downloads\Assessment_ClientApp2-master\Assessment_ClientApp2\obj\Debug\Monsters.pdb

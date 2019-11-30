@@ -247,25 +247,74 @@ namespace Assessment_ClientApp2
         static void DisplayAddMonster(List<Monster> monsters)
         {
             Monster newMonster = new Monster();
+            bool ValidNumber = false;
+            bool ValidEmotionalState = false;
+            bool ValidTribe = false;
+            int age = 0;
+            Monster.EmotionalState attitude = default;
+            Monster.Society tribe = default;
 
             DisplayScreenHeader("Add Monster");
 
             //
             // add monster object property values
             //
+                //
+                // add monster name
+                //
             Console.Write("\tName: ");
             newMonster.Name = Console.ReadLine();
+            
+                //
+                // add monster age. Validate user input
+                //
+            while (!ValidNumber)
+            {
+                Console.Write("\tAge: ");
 
-            Console.Write("\tAge: ");
-            int.TryParse(Console.ReadLine(), out int age);
+                if (int.TryParse(Console.ReadLine(), out age))
+                {
+                    ValidNumber = true;
+                }
+                else
+                {
+                    Console.WriteLine("Not a number. Please enter a number.");
+                }
+            }
+
             newMonster.Age = age;
 
-            Console.Write("\tAttitude: ");
-            Enum.TryParse(Console.ReadLine(), out Monster.EmotionalState attitude);
+            //
+            // add monster emotional state. Validate input
+            //
+            while (!ValidEmotionalState)
+            {
+                Console.Write("\tAttitude: ");
+                if (Enum.TryParse(Console.ReadLine(), out attitude))
+                {
+                    ValidEmotionalState = true;
+                }
+                else
+                {
+                    Console.WriteLine("Not an acceptable emotional state. Please try again.");
+                }
+            }
+            
             newMonster.Attitude = attitude;
 
-            Console.Write("\tTribe: ");
-            Enum.TryParse(Console.ReadLine(), out Monster.Society tribe);
+            while (!ValidTribe)
+            {
+                Console.Write("\tTribe: ");
+                if (Enum.TryParse(Console.ReadLine(), out tribe))
+                {
+                    ValidTribe = true;
+                }
+                else
+                {
+                    Console.WriteLine("Not a valid tribe. Please try again.");
+                }
+            }
+            
             newMonster.Tribe = tribe;
 
             Console.Write("\tActive State: ");

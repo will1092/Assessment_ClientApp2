@@ -1,0 +1,5 @@
+﻿Sid,145,happy,north,true
+Lucy,125,bored,south,false
+Bill,934,sad,west,false
+Sheldon,64,happy,east,true
+Elena,33,angry,north,true
