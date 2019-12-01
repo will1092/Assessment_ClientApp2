@@ -250,9 +250,11 @@ namespace Assessment_ClientApp2
             bool ValidNumber = false;
             bool ValidEmotionalState = false;
             bool ValidTribe = false;
+            bool active = false;
             int age = 0;
             Monster.EmotionalState attitude = default;
             Monster.Society tribe = default;
+            string userInput;
 
             DisplayScreenHeader("Add Monster");
 
@@ -317,8 +319,19 @@ namespace Assessment_ClientApp2
             
             newMonster.Tribe = tribe;
 
-            Console.Write("\tActive State: ");
-            bool.TryParse(Console.ReadLine(), out bool active);
+            Console.Write("\tActive State (active or inactive): ");
+            userInput = Console.ReadLine().ToLower().ToLower();
+
+            switch (userInput)
+            {
+                case "active":
+                    active = true;
+                    break;
+
+                default:
+                    active = false;
+                    break;
+            }
             newMonster.Active = active;
 
             //
